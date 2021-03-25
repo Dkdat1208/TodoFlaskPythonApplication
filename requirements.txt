@@ -1,0 +1,7 @@
+Flask  
+datetime 
+uuid
+Flask-SQLAlchemy
+flask_bcrypt
+flask_login
+PyJWT

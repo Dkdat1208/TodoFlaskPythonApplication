@@ -1,0 +1,21 @@
+<!--
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <h1>Home Page</h1>
+
+    </body>
+
+</html>
+-->
+
+
+{% extends "base.html" %}
+{% block  content%}
+<h1>{{current_user.name }}</h1>
+<h1>Vous pouvez accceder à votre  liste de ToDo en étant connecté</h1>
+
+{% endblock content %}

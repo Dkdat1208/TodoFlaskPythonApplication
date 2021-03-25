@@ -1,0 +1,48 @@
+
+{% extends "base.html" %}
+{% block  content%}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo Application</title>
+
+  
+</head>
+
+<body>
+    <div style="margin-top: 50px;" class="ui container">
+        <h1 class="ui center aligned header">ToDo App</h1>
+
+        <form class="ui form" action="/add" method="post">
+            <div class="field">
+          
+                <input type="text" name="content" placeholder="Entrer un  Todo..."><br>
+            </div>
+            <button class="ui blue button" type="submit">Add</button>
+        </form>
+
+        <hr>
+
+        {% for todo in todoList %}
+        <div class="ui segment">
+            <p class="ui big header"> {{ todo.content }}</p>
+
+            {% if todo.status == False %}
+            <span class="ui gray label">Not Done</span>
+            {% else %}
+            <span class="ui green label">Done</span>
+            {% endif %}
+
+            <a class="ui blue button" href="/update/{{ todo.id }}">Update</a>
+            <a class="ui red button" href="/delete/{{ todo.id }}">Delete</a>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>
+   
+{% endblock content %}
